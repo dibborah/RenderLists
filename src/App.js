@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from "react";
+import User from "./components/User";
 
 function App() {
+  const users = [
+    { id: 1, firstName: "Harhsit", lastName: "Vasistha" },
+    { id: 2, firstName: "Elon", lastName: "Musk" },
+    { id: 3, firstName: "Dibya", lastName: "Borah" },
+  ];
+
+  // map method is used to iterate an Array in React
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      {/**
+    {users.map((user) => {
+        return <User firstName={user.firstName}/>
+      })}
+    **/}
+      {/**{users.map((user) => (
+        <User firstName={user.firstName} />
+      ))}**/}
+      {users.map((user) => (
+        <User {...user} />
+      ))}
+    </Fragment>
   );
 }
 
