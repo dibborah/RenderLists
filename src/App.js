@@ -21,7 +21,7 @@ function App() {
         <User firstName={user.firstName} />
       ))}**/}
       {users.map((user) => (
-        <User {...user} />
+        <User {...user} key={user.id}/>
       ))}
     </Fragment>
   );
